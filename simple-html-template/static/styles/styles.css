@@ -4,5 +4,10 @@ body{
 }
 
 div{
-    margin: 0 auto; 
+    display: block;
+    margin: 0 2rem;
+}
+
+ul{
+    margin-left: 4rem;
 }
