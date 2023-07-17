@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href='/static/stlyes.css'>
   </head>
   <body>
     <h1>Home Page</h1>
-	<p> Hello {{content[0]}}</p>
-    <p>Site Owners: </p>
-    {% for i in content %}
+    <div>
+      <p>Site Owners: </p>
+      {% for i in content %}
+        {% if i == "Admin" %}
+          {{continue}}
+        {% else %}
         <p>{{i}}</p>
-    {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </body>
 </html>
