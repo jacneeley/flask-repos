@@ -13,4 +13,4 @@ def index():
     return render_template("index.html",content=lst_users)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
