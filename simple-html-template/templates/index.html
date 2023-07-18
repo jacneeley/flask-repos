@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block page %}Owners Page{% endblock %}
 {% block content %}
+<h2>Welcome {{activeUser}}</h2>
 <div>
     <p>Site Owners: </p>
     {% for i in owners %}

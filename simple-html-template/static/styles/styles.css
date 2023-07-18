@@ -18,6 +18,21 @@ nav{
     border-bottom: 3px solid rgb(199, 199, 199);
 }
 
+form{
+    width:100%;
+    max-width: 600px;
+    min-width: 300px;
+    min-height: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input{
+    margin: auto;
+    display: block;
+    width: 150px;
+}
+
 a{
     text-decoration: none;
     color:whitesmoke;
@@ -43,4 +58,16 @@ a:hover{
 
 .nav-links{
     text-align: center;
+}
+
+.form-child p{
+    margin-right: 7.25rem;
+}
+
+.btn-submit{
+    width: 160px;
+    margin: .5rem auto;
+    height: 25px;
+    font-size: 15px;
+    
 }
