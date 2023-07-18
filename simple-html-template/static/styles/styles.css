@@ -1,6 +1,6 @@
 body{
-    background-color: slategrey;
-    color:whitesmoke;
+    background-color: #333;
+    color:rgb(199, 199, 199);
 }
 
 div{
@@ -10,4 +10,37 @@ div{
 
 ul{
     margin-left: 4rem;
+}
+
+nav{
+    margin-bottom: 2.5rem;
+    font-size: xx-large;
+    border-bottom: 3px solid rgb(199, 199, 199);
+}
+
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+a:hover{
+    cursor: pointer;
+    color:#6d6d6d;
+}
+
+.nav-items{
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: medium;
+}
+
+.navbar-item{
+    display: inline;
+}
+
+.nav-links{
+    text-align: center;
 }
