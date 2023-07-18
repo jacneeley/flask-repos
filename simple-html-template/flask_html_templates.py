@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
 
 app = Flask(__name__,template_folder='templates', static_folder='static')
@@ -15,8 +15,12 @@ lst_users = ["Admin","Jake","Tim","Eric"]
 
 @app.route("/owners")
 def owners_page():
-    user = session["user"]
-    return render_template("index.html",owners=lst_users, activeUser = user)
+    if "user" in session:
+        user = session["user"]
+        return render_template("index.html",owners=lst_users, activeUser = user)
+    else:
+        return redirect(url_for("login"))
+
 
 @app.route("/login", methods=["POST","GET"])
 def login():
@@ -43,8 +47,13 @@ def user():
 
 @app.route("/logout")
 def logout():
-    session.pop("user", None)
-    return redirect(url_for("home"))
+    if "user" in session:
+        flash("Successfully Logged Out", "info")
+        session.pop("user", None)
+        return redirect(url_for("home"))
+    else:
+        flash("You must login first...", "info")
+        return redirect(url_for("home"))
 
 if __name__ == "__main__":
     app.run(debug=True)

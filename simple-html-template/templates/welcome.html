@@ -2,4 +2,11 @@
 {% block page %}{% endblock %}
 {% block content %}
 <h2 style="text-align: center;">Welcome to the Server</h2>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+               <p style=" text-align: center; font-size: small; color:rgba(255, 31, 31, 0.726)">{{msg}}</p> 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 {% endblock %}

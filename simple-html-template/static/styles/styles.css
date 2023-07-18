@@ -15,12 +15,11 @@ ul{
 nav{
     margin-bottom: 2.5rem;
     font-size: xx-large;
-    border-bottom: 3px solid rgb(199, 199, 199);
+    border-bottom: 3px solid #3b3b4f;
 }
 
 form{
     width:100%;
-    max-width: 600px;
     min-width: 300px;
     min-height: 150px;
     margin: 0 auto;
@@ -58,6 +57,21 @@ a:hover{
 
 .nav-links{
     text-align: center;
+}
+
+.login-page{
+    width:100%;
+    max-width: 1500px;
+    min-width: 300px;
+    min-height: 150px;
+    margin: 0 auto;
+}
+
+.form-parent{
+    max-width: 800px;
+    max-height: 400px;
+    margin: 0 auto;
+    border: 3px solid #3b3b4f;
 }
 
 .form-child p{
