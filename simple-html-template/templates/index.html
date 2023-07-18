@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
-    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
-  </head>
-  <body>
-    <h1>Home Page</h1>
-    <div>
-      <p>Site Owners: </p>
-      {% for i in content %}
-        {% if i == "Admin" %}
-          {{continue}}
-        {% else %}
-        <ul>{{i}}</ul>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block page %}Owners Page{% endblock %}
+{% block content %}
+<div>
+    <p>Site Owners: </p>
+    {% for i in owners %}
+      {% if i == "Admin" %}
+        {{continue}}
+      {% else %}
+      <ul>{{i}}</ul>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
