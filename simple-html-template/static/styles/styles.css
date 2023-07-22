@@ -26,6 +26,11 @@ form{
     text-align: center;
 }
 
+label{
+    display: block;
+    margin-bottom: 1rem;
+}
+
 input{
     margin: auto;
     display: block;
@@ -43,11 +48,9 @@ a:hover{
 }
 
 .nav-items{
-    display: inline;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     font-size: medium;
 }
 
@@ -67,15 +70,24 @@ a:hover{
     margin: 0 auto;
 }
 
-.form-parent{
+.div-parent{
     max-width: 800px;
     max-height: 400px;
     margin: 0 auto;
-    border: 3px solid #3b3b4f;
+    border-bottom: 3px solid #3b3b4f;
 }
 
-.form-child p{
+.div-child{
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.div-child p{
     margin-right: 7.25rem;
+}
+
+.borderless{
+    border-bottom: 0;
 }
 
 .btn-submit{
