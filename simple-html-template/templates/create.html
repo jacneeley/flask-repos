@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block page %}{% endblock %}
+{% block content %}
+<div class="login-page">
+    <h1>Create an Account</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+               <p style=" text-align: center; font-size: small; color:rgba(255, 31, 31, 0.726)">{{msg}}</p> 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="div-parent">
+        <form action="#" method="post">
+            <div class="div-child">
+                <label>Email: <input type="email" name="inputEmail" placeholder="Enter Email" value="{{email if email}}" style="margin-bottom: .25rem;" required /></label>
+                <label>Username: <input type ="text" name="inputUsername" placeholder="Create Username" style="margin-bottom: .25rem;" required /></label>
+                <label>Password: <input type="password" name="inputPassword" placeholder="Create Password" style="margin-bottom: .25rem;" required /></label>
+                <button type="submit" class="btn-submit">Create Account</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

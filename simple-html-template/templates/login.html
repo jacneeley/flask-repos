@@ -3,14 +3,28 @@
 {% block content %}
 <div class="login-page">
     <h1>Login</h1>
-    <div class="form-parent">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+               <p style=" text-align: center; font-size: small; color:rgba(255, 31, 31, 0.726)">{{msg}}</p> 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="div-parent">
         <form action="#" method="post">
-            <div class="form-child">
-                <p>Name:</p>
-                <input type ="text" name="inputName" style="margin-bottom: .25rem;">
-                <button type="submit" class="btn-submit">Submit</button>
+            <div class="div-child">
+                <label>Email: <input type="email" name="inputEmail" placeholder="Enter Email" value="{{email if email}}" style="margin-bottom: .25rem;"/></label>
+                <label>Username: <input type ="text" name="inputUsername" placeholder="Create Username" style="margin-bottom: .25rem;"></label>
+                <label>Password: <input type="password" name="inputPassword" placeholder="Create Password" style="margin-bottom: .25rem;"></label>
+                <button type="submit" class="btn-submit">Login</button>
             </div>
         </form>
+    </div>
+    <div class = "div-parent borderless">
+        <div class = "div-child">
+            <label>Don't have an account?</label>
+            <a href="/create"><button>Create a new Account</button></a>
+        </div>
     </div>
 </div>
 {% endblock %}

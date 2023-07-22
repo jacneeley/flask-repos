@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for item in values %}
+        <p>Email: {{item.email}} Username: {{item.username}} <a href="{{url_for('del_users')}}">delete</a></p>
+    {% endfor %}
+{% endblock%}

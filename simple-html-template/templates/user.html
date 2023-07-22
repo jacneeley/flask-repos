@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block page %}User Profile Page{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+               <p style=" text-align: center; font-size: small; color:rgba(255, 31, 31, 0.726)">{{msg}}</p> 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h3>Welcome {{activeUser}}</h3>
+    <div>
+        <h4>Change account details?</h4>
+        <form action="#" method="post">
+            <label>Email: <input type="email" name="inputEmail" placeholder="Enter Email" value="{{email if email}}" style="margin-bottom: .25rem;"/></label>
+            <label>Username: <input type ="text" name="inputUsername" placeholder="Enter Username" style="margin-bottom: .25rem;"></label>
+            <label>Password: <input type="password" name="inputPassword" placeholder="Enter Password" style="margin-bottom: .25rem;"></label>
+            <button type="submit" class="btn-submit">Update</button>
+        </form>
+    </div> 
+{% endblock %}
