@@ -11,9 +11,12 @@
     {% for item in values %}
         <Form action="{{ url_for('del_users', user_id = item.id) }}" method="post" class ="db-items">
             <p>User ID: 
-                <!-- <input type ="text" name = "userID" value ="{{item.id}}" class="remove-input-styles" readonly />  -->
-                {{ item.id }} Email: {{item.email}} Username: {{item.username}} password: {{item.password}} 
-                <input type="submit" value = "delete" class="remove-input-styles" style="float: right; margin-right: 50rem;"/>
+                {% if item.username != "admin" %}
+                    {{ item.id }} Email: {{item.email}} Username: {{item.username}} password: {{item.password}} 
+                    <input type="submit" value = "delete" class="remove-input-styles" style="float: right; margin-right: 50rem;"/>
+                {% else %}
+                    {{ item.id }} Email: {{item.email}} Username: {{item.username}} password: {{item.password}} 
+                {% endif %}
             </p>
         </Form>
     {% endfor %}
