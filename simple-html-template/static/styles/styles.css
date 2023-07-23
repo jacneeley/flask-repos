@@ -1,6 +1,7 @@
 body{
     background-color: #333;
     color:rgb(199, 199, 199);
+    font-family:Consolas,monaco,monospace;
 }
 
 div{
@@ -94,4 +95,25 @@ a:hover{
     margin: .5rem auto;
     height: 25px;
     font-size: 15px;
+}
+
+.db-items{
+    font-size: large;
+    all: unset;
+}
+
+.remove-input-styles{
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: medium;
+    background-color: #333;
+    color:rgb(199, 199, 199);
+}
+
+.remove-input-styles:hover{
+    cursor: pointer;
+    color:whitesmoke;
 }
