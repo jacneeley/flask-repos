@@ -9,12 +9,12 @@
   </head>
   <body>
     <nav>
-      <a href="/">Test Site</a>
-      <ul class="nav-items">
+      <ul class="nav-items"></ul>
+        <a href="/">Test Site</a>
         <li class="navbar-item"><a class="nav-links"href="/user">User</a></li>
-        <li class="nav-bar-item"><a class="nav-links" href="/owners">Site Owners</a></li>
-        <li class="nav-bar-item"><a class="nav-links" href="/userdb">User Database</a></li>
-        <li class="navbar-item" style="text-align: right;"><a class="nav-items" href="/logout">Logout</a></li>
+        <li class="navbar-item"><a class="nav-links" href="/owners">Site Owners</a></li>
+        <li class="navbar-item"><a class="nav-links" href="/userdb">User Database</a></li>
+        <li class="navbar-item"><a class="nav-links" style="float:right; margin-top:1rem;" href="/logout">Logout</a></li>
       </ul>
     </nav>
     <h1>{% block page %}{% endblock %}</h1>
