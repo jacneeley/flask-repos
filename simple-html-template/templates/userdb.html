@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+    <h2 style="margin-bottom: 3rem;">Users</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+               <p style=" text-align: center; font-size: small; color:rgba(255, 31, 31, 0.726)">{{msg}}</p> 
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     {% for item in values %}
-        <p>Email: {{item.email}} Username: {{item.username}} <a href="{{url_for('del_users')}}">delete</a></p>
+        <Form action="{{ url_for('del_users', user_id = item.id) }}" method="post" class ="db-items">
+            <p>User ID: 
+                <!-- <input type ="text" name = "userID" value ="{{item.id}}" class="remove-input-styles" readonly />  -->
+                {{ item.id }} Email: {{item.email}} Username: {{item.username}} password: {{item.password}} 
+                <input type="submit" value = "delete" class="remove-input-styles" style="float: right; margin-right: 50rem;"/>
+            </p>
+        </Form>
     {% endfor %}
 {% endblock%}

@@ -89,7 +89,6 @@ def create_user():
             newuser = users(email,username,password)
             db.session.add(newuser)
             db.session.commit()
-            newuser.pop()
             flash("Account Successfully created!", "info")
             return render_template("user.html",activeUser = username)
             
@@ -142,9 +141,19 @@ def view_users():
         return render_template("userdb.html", values = users.query.all())
     else:
         return redirect(url_for("login"))
-@app.route("/deleteuser")
-def del_users():
-    if "activeUser" in session:
+
+@app.route("/deleteuser/<int:user_id>", methods=["POST"])
+def del_users(user_id):
+    if request.method == "POST":
+        if "activeUser" in session:
+            users.query.filter(users.id == user_id).delete()
+            db.session.commit()
+            flash('Item deleted.',"info")
+            return redirect(url_for("view_users"))
+        else:
+            return redirect(url_for("login"))
+    else:
+        flash("ERROR", 'error')
         return redirect(url_for("view_users"))
     
 @app.route("/logout")
