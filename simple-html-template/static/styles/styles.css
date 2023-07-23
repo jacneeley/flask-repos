@@ -8,14 +8,10 @@ div{
     margin: 0 2rem;
 }
 
-ul{
-    margin-left: 4rem;
-}
-
 nav{
     margin-bottom: 2.5rem;
     font-size: xx-large;
-    border-bottom: 3px solid #3b3b4f;
+    border-bottom: 3px solid #3b3b4f; 
 }
 
 form{
@@ -47,19 +43,22 @@ a:hover{
     color:#6d6d6d;
 }
 
+/* ul */
 .nav-items{
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    font-size: medium;
+    padding: 0; 
 }
 
+/* li */
 .navbar-item{
-    display: inline;
+   display: inline;
+   padding: 14px 16px;
 }
 
+/* a */
 .nav-links{
-    text-align: center;
+   font-size: large;
 }
 
 .login-page{
@@ -95,5 +94,4 @@ a:hover{
     margin: .5rem auto;
     height: 25px;
     font-size: 15px;
-    
 }
