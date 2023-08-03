@@ -46,17 +46,15 @@ def login():
     if request.method == "POST":
         session.permanent = True
         username = request.form["inputUsername"]
+        uPassword = request.form["inputPassword"]
         session["activeUser"] = username
-        found_user = db.session.query(users.id).filter_by(username=username).first()
+        found_user = db.session.query(users.id).filter_by(username=username , password = uPassword).first()
 
         if found_user:
-            # session["email"] = found_user.email
-            # session["username"] = found_user.username
-            # session["password"] = found_user.password
             return redirect(url_for("user"))
         else:
             session.pop("activeUser",None)
-            flash("User does not exist...", "info")
+            flash("Username and Password do not match...", "info")
             return render_template("login.html")
         
     else:
