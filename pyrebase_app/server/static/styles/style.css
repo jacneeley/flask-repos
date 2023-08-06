@@ -1,0 +1,14 @@
+body{
+    background-color:rgb(31, 31, 46);
+    color:whitesmoke;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 400px;
+    max-height: auto;
+}
+
+img{
+    max-width: 100%;
+}

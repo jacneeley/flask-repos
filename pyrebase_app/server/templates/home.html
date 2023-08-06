@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content%}
+  <div>
+    <h1>Server Test</h1>
+    <h2>Database Images</h2>
+    <div class= "container">
+    {% for i in data.val() %}
+        {% for j in i %}
+        <p>{{ i.get(j) }}</p>
+        <img src = "{{i.get(j)}}">
+        {% endfor %}
+    {% endfor %}
+    </div>  
+  </div>
+{% endblock %}
