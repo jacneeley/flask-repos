@@ -6,5 +6,5 @@ app = Flask(__name__)
 def index():
     return 'JWT Auth tutorial'
 
-if __name__ == '__main___':
+if __name__ == '__main__':
     app.run(debug=True)
