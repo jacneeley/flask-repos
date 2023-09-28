@@ -34,21 +34,20 @@ def public():
 @app.route('/auth')
 @check_token
 def authorised():
-    return 'this is only viewable with a token'
+    return "congrats, your token is valid!"
 
 @app.route('/login',methods=['POST'])
 def login():
-    if request.form['username'] and request.form['password'] == 'password':
+    if request.form['username'] == 'admin' and request.form['password'] == 'password':
         session['logged_in'] = True
         token = jwt.encode({
             'user' : request.form['username'],
-            'exp': datetime.datetime.utcow() + datetime.timedelta(seconds=60),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=60),
         },
         app.config['SECRET_KEY'])
-        return jsonify({'jsonify' : token.decode('utf-8')})
+        return jsonify({'token' : token})
     else:
         return make_response('unable to verify', 403, {'WWW-Authenticate' : 'Basic realm: "login.'})
-
 
 if __name__ == '__main__':
     app.run(debug=True)
