@@ -1,4 +1,5 @@
 import pyrebase
+import time
 
 config = {
     "apiKey": "AIzaSyC8PKytEbFTWyh5AUfm3IdG1_r4JOGGHA8",
@@ -17,3 +18,13 @@ cloud_path = "imgs"
 
 db = storage.child(cloud_path).get()
 print(db.val())
+
+def animate_imgs():
+    keys = []
+    for i in db.val():
+        for j in i:
+            keys.append(j)
+        print(keys)
+    img = db.each()
+    print(img)
+animate_imgs()

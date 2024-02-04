@@ -6,6 +6,9 @@
     <h2>Home</h2>
     <div class= "container">
       <p>home.</p>
+      {% for i in data.each() %}
+        <p>{{i.val()["concrete"]}}</p>
+      {% endfor %}
     </div>  
   </div>
 {% endblock %}
